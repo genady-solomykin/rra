@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			trigger: '.accelerators-questions__list',
 			scrub: 1,
 			start: () => {
-				const startHeight = (questionsListItems[0].clientHeight * 4) + 100
+				const startHeight = (questionsListItems[0].getBoundingClientRect() * 4) + 100
 
 				return `top+=${startHeight} bottom+=50px`
 			},
