@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Детальная акселераторов - МСП</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="/app.min.css" rel="stylesheet" media="all">
+  </head>
+  <body class="js-body width-standart">
+    <div id="SVG_container"></div>
+    <div class="body-wrapper">
+      <header class="header js-header">
+        <div class="container header__container">
+          <div class="header__navigation">
+            <!-- у формы ненужные классы: btn-dropdown, js-dropdown - они нужны для показа popup'а с результатами-->
+            <form class="form-search header__search js-search-header" action="/">
+              <input class="form-search__input" type="text" value="кликнуть сюда для открытия/закрытия"/>
+              <button class="form-search__btn form-search__btn_close js-search-header-hide" type="reset">
+                <svg class="icon icon-close ">
+                  <use xlink:href="#close"></use>
+                </svg>
+              </button>
+              <!-- dropdow-popup - обёртка для показа, можно удалять, а внутреннюю часть вставить в необходимое место-->
+              <div class="dropdown-popup" style="padding: 0">
+                <div class="search-result search-result_popup">
+                  <div class="search-result__services">
+                    <div class="search-result__header">
+                      <div class="search-result__title">Сервисы</div>
+                    </div>
+                    <div class="search-result__services-links"><a class="btn search-result__services-link" href="/"><img class="icon search-result__services-link-icon" src="/img/icons/lk-selection-sn.svg" alt=""/><span>Регистрация <strong>бизнес</strong>а</span></a><a class="btn search-result__services-link" href="/"><img class="icon search-result__services-link-icon" src="/img/icons/lk-reg-busines.svg" alt=""/><span>Кредит для вашего <strong>бизнес</strong>а</span></a></div>
+                  </div>
+                  <div class="search-result__links">
+                    <div class="search-result__header">
+                      <div class="search-result__title">Новости</div>
+                    </div>
+                    <div class="search-result__links-list"><a class="search-result__link" href="/"><span class="search-result__link-content"><span class="card-label card-label_size_medium">Сегодня</span><span class="search-result__link-text">Маркетплейсы убивают <strong>бизнес</strong> 1 причины не размещаться на Wildberries, Ozon, Я.Маркет</span></span>
+                        <svg class="icon icon-right search-result__link-icon">
+                          <use xlink:href="#right"></use>
+                        </svg></a><a class="search-result__link" href="/"><span class="search-result__link-content"><span class="card-label card-label_size_medium">Сегодня</span><span class="search-result__link-text">Маркетплейсы убивают <strong>бизнес</strong> 2 причины не размещаться на Wildberries, Ozon, Я.Маркет</span></span>
+                        <svg class="icon icon-right search-result__link-icon">
+                          <use xlink:href="#right"></use>
+                        </svg></a><a class="search-result__link" href="/"><span class="search-result__link-content"><span class="card-label card-label_size_medium">Сегодня</span><span class="search-result__link-text">Маркетплейсы убивают <strong>бизнес</strong> 3 причины не размещаться на Wildberries, Ozon, Я.Маркет</span></span>
+                        <svg class="icon icon-right search-result__link-icon">
+                          <use xlink:href="#right"></use>
+                        </svg></a>
+                    </div><a class="search-result__links-all" href="/"><span>Смотреть все результаты</span>
+                      <svg class="icon icon-right ">
+                        <use xlink:href="#right"></use>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+            </form><a class="logo header__logo" href="/"><img class="logo__image" src="/img/icons/logo.svg" alt=""/></a>
+            <div class="nav nav_header js-nav-toggle">
+              <div class="nav__link nav__link_wrapper"><span class="nav__link-label">Мой бизнес</span>
+                <div class="btn-action btn-dropdown js-dropdown nav__link-action"><span class="nav__link-select">Создать бизнес</span><span class="nav__link-select_mobile">Создать бизнес</span>
+                  <svg class="icon icon-down ">
+                    <use xlink:href="#down"></use>
+                  </svg>
+                  <div class="dropdown-popup dropdown-popup_header_menu">
+                    <div class="nav dropdown-popup__nav nav_vertical"><a class="nav__link" href="/">
+                        <svg class="icon icon-home ">
+                          <use xlink:href="#home"></use>
+                        </svg><span>Мой бизнес</span></a></div>
+                    <div class="nav dropdown-popup__nav nav_vertical"><a class="nav__link" href="/">
+                        <svg class="icon icon-suitcase ">
+                          <use xlink:href="#suitcase"></use>
+                        </svg><span>Создать новый</span></a><a class="nav__link" href="/">
+                        <svg class="icon icon-plus ">
+                          <use xlink:href="#plus"></use>
+                        </svg><span>Добавить существующий</span></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav__links"><a class="nav__link nav__links-link" href="/">Сервисы</a><a class="nav__link nav__links-link" href="/">Бизнес-образование</a><a class="nav__link nav__links-link" href="/">Новости</a></div>
+              <div class="nav__link nav__link_type_dropdown btn-dropdown js-dropdown js-nav-toggle-more" style="display: none">
+                <div class="nav__link-dots"><span></span><span></span><span></span></div>
+                <div class="dropdown-popup dropdown-popup_header_menu">
+                  <div class="nav dropdown-popup__nav nav_vertical js-nav-toggle-popup"><a class="nav__link" href="/">Ссылка</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user-menu">
+            <button class="user-menu__button js-search-header-show" type="button">
+              <svg class="icon icon-search ">
+                <use xlink:href="#search"></use>
+              </svg>
+            </button>
+            <button class="user-menu__button" type="button"><span class="user-menu__button-counter">5</span>
+              <svg class="icon icon-bell ">
+                <use xlink:href="#bell"></use>
+              </svg>
+              <svg class="icon icon-bell_crop icon_crop">
+                <use xlink:href="#bell_crop"></use>
+              </svg>
+            </button>
+            <button class="user-menu__button user-menu__button_hamburger js-menu-toggle" type="button"><span class="btn-hamburger js-menu-toggle-hamburger"><span class="btn-hamburger__line btn-hamburger__line_top"></span><span class="btn-hamburger__line btn-hamburger__line_middle"></span><span class="btn-hamburger__line btn-hamburger__line_bottom"></span></span></button>
+            <div class="user-menu__avatar btn-dropdown js-dropdown"><img class="user-menu__avatar-image" src="/img/user.png" alt=""/>
+              <div class="dropdown-popup dropdown-popup_user_menu">
+                <div class="nav dropdown-popup__nav nav_vertical"><a class="nav__link" href="/">
+                    <svg class="icon icon-user ">
+                      <use xlink:href="#user"></use>
+                    </svg><span>Перейти в профиль</span></a><a class="nav__link" href="/">
+                    <svg class="icon icon-settings ">
+                      <use xlink:href="#settings"></use>
+                    </svg><span>Настройки профиля</span></a><a class="nav__link" href="/">
+                    <svg class="icon icon-message ">
+                      <use xlink:href="#message"></use>
+                    </svg><span>Мои заявки</span></a></div>
+                <div class="nav dropdown-popup__nav nav_vertical"><a class="nav__link" href="/">
+                    <svg class="icon icon-exit ">
+                      <use xlink:href="#exit"></use>
+                    </svg><span>Выход</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="page page_service_index page_accelerators">
+        <script>
+          document.documentElement.style.setProperty("--header-bg", "transparent")
+          document.documentElement.style.setProperty("--header-clr", "transparent")
+          document.documentElement.style.setProperty("--footer-bg", "transparent")
+        </script>
+        <div class="breadcrumb container js-scrollbar" data-simplebar="init">
+          <ul class="breadcrumb-wrapper">
+            <li class="breadcrumb__item breadcrumb__item_home"><a class="breadcrumb__link" href="/">Главная</a><a class="breadcrumb__link" href="/">
+                <svg class="icon icon-home ">
+                  <use xlink:href="#home"></use>
+                </svg></a></li>
+            <li class="breadcrumb__item"><a class="breadcrumb__link" href="/">бизнес-компетенции</a></li>
+            <li class="breadcrumb__item"><span class="breadcrumb__link">акселерация</span></li>
+          </ul>
+        </div>
+        <div class="page-intro page-intro_page_load">
+          <div class="page-intro__container container">
+            <div class="page-intro__wrapper page-intro__wrapper_header">
+              <div class="page-intro__wrapper-text">
+                <h1 class="title title_size_bigger page-intro__title">Индустрия гостеприимства (HoReCa)</h1>
+                <div class="page-intro__wrapper-image page-intro__wrapper-image_mobile"><img src="/img/accelerators-detail.png" alt=""></div>
+                <div class="text-typography text-typography_second">
+                  <p>Образовательный проект при поддержке Сбербанка, для предпринимателей по созданию и развитию действующего стартапа, который поможет найти и проработать идею, собрать команду, создать продукт и начать его реализовывать</p>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__title accelerators-card__title_small"> <span>Для записи на акселератор — зарегистрируйте новый или добавьте существующий бизнес</span></div>
+                  <div class="accelerators-card__wrapper">
+                    <div class="list-btns">
+                      <div class="btn btn_size_medium btn_view_square btn_color_white">
+                        <svg class="icon icon-plus ">
+                          <use xlink:href="#plus"></use>
+                        </svg><span>Создать бизнес</span>
+                      </div>
+                      <div class="btn btn_size_medium btn_view_square btn_color_white">
+                        <svg class="icon icon-suitcase ">
+                          <use xlink:href="#suitcase"></use>
+                        </svg><span>Добавить существующий</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card">
+                  <div class="accelerators-card__wrapper">
+                    <div class="btn btn_size_medium btn_view_square btn_color_purple"> 
+                      <svg class="icon icon-bell_hollow ">
+                        <use xlink:href="#bell_hollow"></use>
+                      </svg><span>Подписаться</span>
+                    </div>
+                    <div class="accelerators-card__info">Подпишитесь, чтобы не пропустить старт приёма заявок</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__wrapper">
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-black">
+                      <svg class="icon icon-bell_hollow ">
+                        <use xlink:href="#bell_hollow"></use>
+                      </svg><span>Вы подписаны</span>
+                    </div>
+                    <div class="accelerators-card__info">Мы уведомим вас о старте приема заявок на указанный e-mail</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__wrapper">
+                    <div class="btn btn_size_medium btn_view_square btn_color_purple"> <span>Подать заявку</span></div>
+                    <div class="accelerators-card__info accelerators-card__info_big accelerators-card__info_white">
+                      <svg class="icon icon-calendar ">
+                        <use xlink:href="#calendar"></use>
+                      </svg><span>10 сентября заканчивается приём заявок</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__title"> 
+                    <svg class="icon icon-calendar ">
+                      <use xlink:href="#calendar"></use>
+                    </svg><span>10 сентября заканчивается приём заявок</span>
+                  </div>
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-black">
+                      <svg class="icon icon-file ">
+                        <use xlink:href="#file"></use>
+                      </svg><span>Заявка сохранёна в черновики</span>
+                    </div>
+                    <div class="accelerators-card__info">Продолжите заполнять заявку с того места, на котором остановились</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__title"> 
+                    <svg class="icon icon-calendar ">
+                      <use xlink:href="#calendar"></use>
+                    </svg><span>10 сентября заканчивается приём заявок</span>
+                  </div>
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-black">
+                      <svg class="icon icon-clocks ">
+                        <use xlink:href="#clocks"></use>
+                      </svg><span>Заявка отправлена</span>
+                    </div>
+                    <div class="accelerators-card__info">Вы получите решение по вашей заявке перед стартом преакселератора</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__title"> 
+                    <svg class="icon icon-calendar ">
+                      <use xlink:href="#calendar"></use>
+                    </svg><span>10 сентября заканчивается приём заявок</span>
+                  </div>
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-black">
+                      <svg class="icon icon-attention ">
+                        <use xlink:href="#attention"></use>
+                      </svg><span>Заявка отправлена на доработку</span>
+                    </div>
+                    <div class="accelerators-card__info">Проверьте вашу заявку и скорректируйте неверные поля</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-red">
+                      <svg class="icon icon-circle-fail ">
+                        <use xlink:href="#circle-fail"></use>
+                      </svg><span>Заявка отклонена</span>
+                    </div>
+                    <div class="accelerators-card__info">Вы не можете участвовать в данном акселераторе</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-green">
+                      <svg class="icon icon-circle-check ">
+                        <use xlink:href="#circle-check"></use>
+                      </svg><span>Участник преакселератора</span>
+                    </div>
+                    <div class="accelerators-card__info accelerators-card__info_big accelerators-card__info_white">
+                      <svg class="icon icon-calendar ">
+                        <use xlink:href="#calendar"></use>
+                      </svg><span>Старт преакселератора 12 октября в 13:00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-green">
+                      <svg class="icon icon-circle-check ">
+                        <use xlink:href="#circle-check"></use>
+                      </svg><span>Участник преакселератора</span>
+                    </div>
+                    <div class="accelerators-card__info">Поздравляем, вы прошли в преакселератор</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden"> 
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-green">
+                      <svg class="icon icon-circle-check ">
+                        <use xlink:href="#circle-check"></use>
+                      </svg><span>Участник акселератора</span>
+                    </div>
+                    <div class="accelerators-card__info accelerators-card__info_big accelerators-card__info_white">
+                      <svg class="icon icon-calendar ">
+                        <use xlink:href="#calendar"></use>
+                      </svg><span>Старт акселератора 30 октября в 11:45 </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-green">
+                      <svg class="icon icon-circle-check ">
+                        <use xlink:href="#circle-check"></use>
+                      </svg><span>Участник акселератора</span>
+                    </div>
+                    <div class="accelerators-card__info">Поздравляем, вы прошли в акселератор</div>
+                  </div>
+                </div>
+                <div class="card-layout accelerators-card hidden">
+                  <div class="accelerators-card__wrapper"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_white-green">
+                      <svg class="icon icon-circle-check ">
+                        <use xlink:href="#circle-check"></use>
+                      </svg><span>Выпускник акселератора</span>
+                    </div>
+                    <div class="accelerators-card__info">Перейдите в Потенциал развития, чтобы скачать сертификат</div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-intro__wrapper-image"> <img src="/img/accelerators-detail.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="page-layout page-layout_light-grey accelerators-participants"> 
+          <div class="container">
+            <div class="accelerators-participants__wrapper">
+              <div class="accelerators-participants__text"> 
+                <div class="title">Кто может принять участие?</div>
+                <div class="text-typography text-typography_second">
+                  <p>В программе могут принять участие компании и индивидуальные предприниматели, ведущие бизнес в сфере высокотехнологичных инноваций</p>
+                </div>
+              </div>
+              <div class="accelerators-participants__list">
+                <div class="accelerators-participants__item"> 
+                  <div class="accelerators-participants__subtitle">Гостиничный бизнес</div>
+                  <div class="accelerators-participants__cards"> 
+                    <div class="accelerators-participants__card">Рестораны</div>
+                    <div class="accelerators-participants__card">Кафе</div>
+                    <div class="accelerators-participants__card">Бары</div>
+                    <div class="accelerators-participants__card">Пиццерии</div>
+                    <div class="accelerators-participants__card">Кофейни</div>
+                    <div class="accelerators-participants__card">Фастфуд</div>
+                    <div class="accelerators-participants__card">Кондитерские цеха</div>
+                    <div class="accelerators-participants__card">Кафетерии</div>
+                    <div class="accelerators-participants__card">Столовые</div>
+                  </div>
+                </div>
+                <div class="accelerators-participants__item"> 
+                  <div class="accelerators-participants__subtitle">Ресторанный бизнес</div>
+                  <div class="accelerators-participants__cards"> 
+                    <div class="accelerators-participants__card">Доставка еды</div>
+                    <div class="accelerators-participants__card">Кейтеринг</div>
+                    <div class="accelerators-participants__card">Продажа товаров HoReCa</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-layout accelerators-stage">
+          <div class="container">
+            <div class="title">Этапы акселерации</div>
+            <div class="accelerators-stage__list">
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">1</div>
+                <div class="accelerators-stage__title">Заполнение заявки на 100 %</div>
+                <div class="accelerators-stage__description">Проверьте, соответствуете ли вы требованиям к участникам программы. Подайте заявку на участие в Акселераторе, ответив на несколько вопросов о вашем бизнесе</div>
+              </div>
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">2</div>
+                <div class="accelerators-stage__title">Онлайн-собеседование </div>
+                <div class="accelerators-stage__description">После окончания приема заявок пройдите онлайн-собеседование с экспертом программы</div>
+              </div>
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">3</div>
+                <div class="accelerators-stage__title">Преакселератор</div>
+                <div class="accelerators-stage__description">Примите участие в Преакселерационном интенсиве - это образовательная программа, в которой эксперты Акселератора расскажут о программе и о том, как подготовить качественную презентацию бизнеса для участия в отборе в основную программу</div>
+              </div>
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">4</div>
+                <div class="accelerators-stage__title">Отбор в Акселератор</div>
+                <div class="accelerators-stage__description">По завершении Преакселератора участвуйте в отборе в основную программу путем презентации своего проекта перед экспертами. В Акселераторе примут участие 50 компаний</div>
+              </div>
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">5</div>
+                <div class="accelerators-stage__title">Акселерационная программа</div>
+                <div class="accelerators-stage__description">Акселерация будет проходить в онлайн-формате и завершится очным Демоднем, на котором участники представят свои результаты</div>
+              </div>
+              <div class="accelerators-stage__item"> 
+                <div class="accelerators-stage__number">6</div>
+                <div class="accelerators-stage__title">Демодень</div>
+                <div class="accelerators-stage__description">Это отличная возможность встретить новых партнеров и заказчиков, попрактиковаться в питчинге и презентовать свой проект перед экспертами, организаторами программы и потенциальными инвесторами. А ещё - сертификат о прохождении Акселератора в вашу копилку!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-layout page-layout_light-grey accelerators-result">
+          <div class="container">
+            <div class="title">Что получат участники?</div>
+            <div class="accelerators-result__list"> 
+              <div class="accelerators-result__item"> 
+                <div class="accelerators-result__text"> 
+                  <div class="accelerators-result__title">
+                     Экспертный взгляд <br>на свой бизнес </div>
+                  <div class="accelerators-result__description">В программе с вами будут работать трекеры — опытные эксперты в интенсивном росте бизнеса. Они уже помогли десятками предпринимателей найти новые возможности для ускорения роста бизнеса, увеличения выручки и оптимизации бизнес-процессов.</div>
+                </div>
+                <div class="accelerators-result__image"><img src="/img/accelerators-result1.png" alt=""></div>
+              </div>
+              <div class="accelerators-result__item"> 
+                <div class="accelerators-result__text"> 
+                  <div class="accelerators-result__title">
+                     Возможность<br>масштабировать бизнес</div>
+                  <div class="accelerators-result__description">Главная цель Акселерации — улучшение бизнес-показателей вашей компании. Каждую неделю вы будете ставить новые цели по развитию на онлайн-встречах с вашим персональным трекером и проверять гипотезы, а к концу Акселератора сформулируете стратегию долгосрочного и динамичного развития бизнеса.</div>
+                </div>
+                <div class="accelerators-result__image"><img src="/img/accelerators-result2.png" alt=""></div>
+              </div>
+              <div class="accelerators-result__item"> 
+                <div class="accelerators-result__text"> 
+                  <div class="accelerators-result__title">Менторство</div>
+                  <div class="accelerators-result__description">Опыт, знания и поддержка лидеров рынка. Анализ кейсов лучших практик российских быстрорастущих компаний.</div>
+                </div>
+                <div class="accelerators-result__image"><img src="/img/accelerators-result3.png" alt=""></div>
+              </div>
+              <div class="accelerators-result__item"> 
+                <div class="accelerators-result__text"> 
+                  <div class="accelerators-result__title">Разбор передовых методик управления проектами и технологических трендов</div>
+                  <div class="accelerators-result__description">Вы опробуете инструменты, которыми пользуются успешные компании по всему миру  — они помогут  вам принимать решения о развитии бизнеса в условиях неопределенности, выявлять истинные потребности клиентов, использовать полученные инсайты в продажах и презентовать проекты экспертам и потенциальным инвесторам.</div>
+                </div>
+                <div class="accelerators-result__image"><img src="/img/accelerators-result4.png" alt=""></div>
+              </div>
+              <div class="accelerators-result__item accelerators-result__item_dark">
+                <div class="accelerators-result__text"> 
+                  <div class="accelerators-result__title">Прямой доступ к актуальным<br>мерам поддержки «Техногазелей»</div>
+                  <div class="accelerators-result__description">Специальные гарантии, возможность получить статус «Газели», информация об участии в закупках крупных заказчиков. Пост-акселерационное сопровождение.</div>
+                </div>
+                <div class="accelerators-result__image"><img src="/img/accelerators-result5.png" alt=""></div>
+              </div>
+            </div>
+            <div class="accelerators-result__empty">     </div>
+          </div>
+        </div>
+        <div class="page-layout page-layout_dark-grey accelerators-subscribe">
+          <div class="container">
+            <div class="accelerators-subscribe__wrapper">
+              <div class="accelerators-subscribe__text">Подпишитесь, чтобы не пропустить старт приема заявок</div>
+              <div class="accelerators-subscribe__button"> 
+                <div class="btn btn_size_medium btn_view_square btn_color_purple"> 
+                  <svg class="icon icon-bell_hollow ">
+                    <use xlink:href="#bell_hollow"></use>
+                  </svg><span>Подписаться</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-layout">
+          <div class="container">
+            <div class="accelerators-experts">
+              <div class="title">Эксперты</div>
+              <div class="accelerators-experts__list"> 
+                <div class="accelerators-experts__item"> 
+                  <div class="accelerators-experts__photo"> <img src="/img/expert1.jpg" alt=""></div>
+                  <div class="accelerators-experts__name">Крохалевская Владлена</div>
+                  <div class="text-typography accelerators-experts__about">
+                    <ul> 
+                      <li>Основатель и руководитель Центра развития «ЛибертиСкул»</li>
+                      <li>Бизнес-консультант, бизнес-тренер</li>
+                      <li>Кандидат экономических наук</li>
+                      <li>Сертифицированный руководитель проектов</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accelerators-experts__item"> 
+                  <div class="accelerators-experts__photo"> <img src="/img/expert2.jpg" alt=""></div>
+                  <div class="accelerators-experts__name">Сидоренко Александр</div>
+                  <div class="text-typography accelerators-experts__about">
+                    <ul> 
+                      <li>Руководитель клуба начинающих предпринимателей «Svoyodelo»</li>
+                      <li>Развиваю навыки переговоров, коммуникаций, нетворкинга</li>
+                      <li>Ведущий российский эксперт в сфере управления репутацией</li>
+                      <li>Личные консультации по бизнесу</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accelerators-experts__item"> 
+                  <div class="accelerators-experts__photo"> <img src="/img/expert3.jpg" alt=""></div>
+                  <div class="accelerators-experts__name">Соловьев Илья</div>
+                  <div class="text-typography accelerators-experts__about">
+                    <ul> 
+                      <li>Бизнесмен-практик с 13-летним опытом ведения успешного бизнеса</li>
+                      <li>12 лет практического опыта в продажах</li>
+                      <li>Основатель Академии продаж Winner Skills</li>
+                      <li>5 лет тренинговой деятельности</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accelerators-experts__item"> 
+                  <div class="accelerators-experts__photo"> <img src="/img/expert4.jpg" alt=""></div>
+                  <div class="accelerators-experts__name">Севастьянов Пётр</div>
+                  <div class="text-typography accelerators-experts__about">
+                    <ul> 
+                      <li>Основатель и руководитель Центра развития «ЛибертиСкул»</li>
+                      <li>Бизнес-консультант, бизнес-тренер</li>
+                      <li>Кандидат экономических наук</li>
+                      <li>Сертифицированный руководитель проектов</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="accelerators-experts__item"> 
+                  <div class="accelerators-experts__photo"> <img src="/img/expert5.jpg" alt=""></div>
+                  <div class="accelerators-experts__name">Кац Валентина</div>
+                  <div class="text-typography accelerators-experts__about">
+                    <ul> 
+                      <li>Руководитель клуба начинающих предпринимателей «Svoyodelo»</li>
+                      <li>Развиваю навыки переговоров, коммуникаций, нетворкинга</li>
+                      <li>Ведущий российский эксперт в сфере управления репутацией</li>
+                      <li>Личные консультации по бизнесу</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accelerators-recording">
+              <div class="title">Запись предыдущего акселератора</div>
+              <div class="accelerators-recording__video"><img src="/img/recording-video.jpg" alt=""></div>
+            </div>
+            <div class="accelerators-recording accelerators-recording_small">
+              <div class="accelerators-recording__video"><img src="/img/recording-video.jpg" alt=""></div>
+              <div class="accelerators-recording__text"> 
+                <div class="title">Запись предыдущего акселератора</div>
+                <div class="accelerators-recording__description">В программе могут принять участие компании и индивидуальные предприниматели, ведущие бизнес в сфере высокотехнологичных инноваций</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-layout page-layout_dark-purple accelerators-questions">
+          <div class="container">
+            <div class="accelerators-questions__wrapper"> 
+              <div class="title">Часто<br>задаваемые вопросы</div>
+              <div class="tabs accelerators-questions__list">
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Из чего состоит программа?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second reg-business__tab_link js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Как стать участником?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Как долго длится программа?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Какие этапы отбора</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Кто будет моим трекером?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Кто может стать участником?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="tabs__item js-accordion-item">
+                  <button class="tabs__button js-accordion-button" type="button">
+                    <div class="title tabs__button-title">Зачем мне участвовать в Акселераторе?</div>
+                    <svg class="icon icon-down_bold ">
+                      <use xlink:href="#down_bold"></use>
+                    </svg>
+                  </button>
+                  <div class="tabs__content text-typography text-typography_second js-accordion-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia odio aut dolor, eum atque dolores facilis ducimus accusantium quasi molestias neque! Modi unde culpa doloremque distinctio, maxime, consequatur facere aliquam incidunt, voluptatibus provident tenetur obcaecati. Rerum iure voluptates beatae, animi molestiae incidunt, blanditiis a voluptatibus fuga adipisci eos perspiciatis distinctio.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima tenetur neque, debitis nihil aperiam sit eos reprehenderit odio. Similique, amet?</p>
+                  </div>
+                </div>
+                <div class="accelerators-questions__mail"> 
+                  <div class="accelerators-subscribe__text"> 
+                    <div class="accelerators-subscribe__title">Остались вопросы?  Напишите нам на почту</div>
+                    <div class="accelerators-subscribe__description">Или позвоните на горячую линию 8 800 2000 0000</div>
+                  </div>
+                  <div class="accelerators-subscribe__button"> 
+                    <div class="btn btn_size_medium btn_view_square btn_color_purple"> 
+                      <svg class="icon icon-mail ">
+                        <use xlink:href="#mail"></use>
+                      </svg><span>Отправить письмо</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer js-footer">
+        <div class="container">
+          <div class="get-feedback footer__get-feedback">
+            <div class="tabs-content get-feedback__tabs js-tabs">
+              <div class="tabs-content__buttons get-feedback__tabs-buttons">
+                <button class="tabs-content__button get-feedback__tabs-button active js-tabs-btn" type="button" data-tab="ts">Техническая поддержка</button>
+                <button class="tabs-content__button get-feedback__tabs-button js-tabs-btn" type="button" data-tab="idea">Предложите свою идею</button>
+              </div>
+              <div class="tabs-content__tab get-feedback__tabs-tab active js-tabs-tab" data-tab-content="ts">
+                <div class="tabs-content__tab-text">
+                  <p>Если у вас возникли вопросы или проблемы, напишите нам об этом. Мы отвечаем в течение 24 часов. Вы можете помочь нам решить ваш вопрос быстрее, если приложите файлы или скрины по возникшей проблеме</p>
+                </div>
+                <form class="form-get-feedback get-feedback__form" action="">
+                  <input type="hidden" name="tab" value="1"/>
+                  <div class="input-group form-get-feedback__group">
+                    <input name="theme" type="hidden" value="3"/>
+                    <input class="input form-get-feedback__input" name="theme_string" placeholder="Введите тему обращения"/>
+                    <div class="input-group__error"></div>
+                  </div>
+                  <button class="btn btn_size_medium btn_view_square btn_color_purple form-get-feedback__submit" type="submit">Обратиться</button>
+                </form>
+              </div>
+              <div class="tabs-content__tab get-feedback__tabs-tab js-tabs-tab" data-tab-content="idea">
+                <div class="tabs-content__tab-text">
+                  <p>Если у вас возникли вопросы или проблемы, напишите нам об этом. Мы отвечаем в течение 24 часов. Вы можете помочь нам решить ваш вопрос быстрее, если приложите файлы или скрины по возникшей проблеме</p>
+                </div>
+                <form class="form-get-feedback get-feedback__form" action="">
+                  <input type="hidden" name="tab" value="2"/>
+                  <div class="input-group form-get-feedback__group">
+                    <input name="theme" type="hidden" value="3"/>
+                    <input class="input form-get-feedback__input" name="theme_string" placeholder="Введите тему обращения"/>
+                    <div class="input-group__error"></div>
+                  </div>
+                  <button class="btn btn_size_medium btn_view_square btn_color_purple form-get-feedback__submit" type="submit">Обратиться</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="footer__top">
+            <ul class="nav nav_footer footer__top-nav">
+              <li class="nav__item"><a class="nav__link" href="/">Сервисы</a></li>
+              <li class="nav__item"><a class="nav__link" href="/">Бизнес-компетенции</a></li>
+              <li class="nav__item"><a class="nav__link" href="/">Аналитика</a></li>
+              <li class="nav__item"><a class="nav__link" href="/">Новости</a></li>
+            </ul>
+            <div class="footer__contacts footer__top-contacts">
+              <div class="footer__contacts-item"><a class="footer__contacts-value" href="tel:88001001100">8 800 100-1-100</a>
+                <div class="footer__contacts-label">Телефон поддержки</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__contacts footer__bottom-contacts">
+              <div class="footer__contacts-item"><a class="logo footer__logo footer__contacts-logo" href="/"><img class="logo__image" src="/img/icons/logo.svg" alt=""/></a>
+                <div class="footer__contacts-label">© 2021 АО «Корпорация «МСП»</div>
+              </div>
+            </div>
+            <div class="footer__bottom-content"><a class="footer__bottom-text" href="/">Политика конфиденциальности</a><a class="footer__bottom-text" href="/">Пользовательское соглашение</a></div>
+          </div>
+        </div>
+      </footer>
+      <div class="modals"></div>
+      <div class="mobile-menu js-mob-side">
+        <div class="mobile-menu__user">
+          <div class="btn-profile mobile-menu__user-btn js-mob-profile-btn">
+            <div class="btn-profile__info"><img class="btn-profile__info-photo" src="/img/user.png" alt=""/>
+              <div class="btn-profile__info-detail">
+                <div class="btn-profile__info-name">Рогачев А.В</div><a class="btn-profile__info-link" href="/">Перейти в профиль</a>
+              </div>
+            </div>
+            <div class="btn-profile__icon">
+              <svg class="icon icon-down ">
+                <use xlink:href="#down"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="mobile-menu__user-nav js-mob-profile-nav">
+            <ul class="nav nav_mobile_side">
+              <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/profile.png" alt=""/></span><span>Перейти в профиль</span></a></li>
+              <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/setting.png" alt=""/></span><span>Настройки профиля</span></a></li>
+              <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/requests.png" alt=""/></span><span>Мои заявки</span></a></li>
+              <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/exit.png" alt=""/></span><span>Выход</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mobile-menu__links">
+          <ul class="nav nav_mobile_side">
+            <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/services.png" alt=""/></span><span>Сервисы</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/academy.png" alt=""/></span><span>Бизнес-компетенции</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/analytics.png" alt=""/></span><span>Аналитика</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/digest.png" alt=""/></span><span>Законодательный дайджест</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="/"><span class="nav__icon"><img class="nav__icon-image" src="/img/mobile-menu/news.png" alt=""/></span><span>Новости</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <script>window.spriteSvgPath = "/img/sprite/sprite.svg"
+        window.spriteSvgUpdate = 2
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+      <script src="/script.js"></script>
+    </div>
+  </body>
+</html>
