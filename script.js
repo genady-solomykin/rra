@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+const x = setTimeout(() => {
+	
 	gsap.registerPlugin(ScrollTrigger);
 
 	const RANGE = 27
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		},
 	  });
 
-	  resultListItems.forEach((item, index) => {
+	  resultListItems.forEach((item) => {
 			tl.set(item, {
 				filter: 'brightness(1)',
 			})
@@ -82,9 +83,22 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 	questionsListItems.forEach(item => {
-		questionsTl.from(item, {
-			opacity: 0,
-			scale: 0.6,
-		}, "-=0.4")
+		console.log(item);
+		gsap.to(item, {
+			yPercent: -15,
+			scrollTrigger: {
+			  trigger: item,
+			  end: '-=25%',
+			  scrub: true,
+			  opacity: 0,
+			  scale: 0.6,
+			},
+		  });
 	})
-})
+
+}, 2000)
+
+// questionsTl.from(item, {
+// 	opacity: 0,
+// 	scale: 0.6,
+// }, "-=0.4")
